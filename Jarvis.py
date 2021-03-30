@@ -17,8 +17,6 @@ import wikipedia
 from PyDictionary import PyDictionary
 from playsound import playsound
 from pytube import YouTube
-from tkinter import *
-from tkinter import messagebox, filedialog
 from googletrans import Translator
 from random import randint
 import requests
@@ -32,8 +30,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from jarvisUi import Ui_JarvisGUI
-from main import takecommand
-
+import sys
 dictionary = PyDictionary()
 
 Assistant = pyttsx3.init('sapi5')
@@ -100,7 +97,8 @@ class MainThread(QThread):
         print("J.A.R.V.I.S Initiated")
         Speak("JARVIS Initiated")
         # Speak("")
-        Wish_me()
+        mt = MainThread()
+        mt.Wish_me()
 
     def TaskExe(self):
         def Music():
@@ -874,100 +872,6 @@ class MainThread(QThread):
                     elif now > alarm_time:
                         break
 
-            elif 'video downloader' in self.query or 'download youtube video' in self.query:
-                Speak("OK, Enter video URL and file location")
-
-                def Widgets():
-                    link_label = Label(root,
-                                       text="YouTube link  :",
-                                       bg="#E8D579")
-                    link_label.grid(row=1,
-                                    column=0,
-                                    pady=5,
-                                    padx=5)
-
-                    root.linkText = Entry(root,
-                                          width=55,
-                                          textvariable=video_Link)
-                    root.linkText.grid(row=1,
-                                       column=1,
-                                       pady=5,
-                                       padx=5,
-                                       columnspan=2)
-
-                    destination_label = Label(root,
-                                              text="Destination    :",
-                                              bg="#E8D579")
-                    destination_label.grid(row=2,
-                                           column=0,
-                                           pady=5,
-                                           padx=5)
-
-                    root.destinationText = Entry(root,
-                                                 width=40,
-                                                 textvariable=download_Path)
-                    root.destinationText.grid(row=2,
-                                              column=1,
-                                              pady=5,
-                                              padx=5)
-
-                    browse_B = Button(root,
-                                      text="Browse",
-                                      command=Browse,
-                                      width=10,
-                                      bg="#05E8E0")
-                    browse_B.grid(row=2,
-                                  column=2,
-                                  pady=1,
-                                  padx=1)
-
-                    Download_B = Button(root,
-                                        text="Download",
-                                        command=Download,
-                                        width=20,
-                                        bg="#05E8E0")
-                    Download_B.grid(row=3,
-                                    column=1,
-                                    pady=3,
-                                    padx=3)
-
-                def Browse():
-
-                    download_Directory = filedialog.askdirectory(
-                        initialdir="YOUR DIRECTORY PATH")
-
-                    download_Path.set(download_Directory)
-
-                def Download():
-
-                    Youtube_link = video_Link.get()
-
-                    download_Folder = download_Path.get()
-
-                    getVideo = YouTube(Youtube_link)
-
-                    videoStream = getVideo.streams.first()
-
-                    videoStream.download(download_Folder)
-
-                    messagebox.showinfo("SUCCESSFULLY",
-                                        "DOWNLOADED AND SAVED IN\n"
-                                        + download_Folder)
-                    Speak("Video Downloaded sir!")
-
-                root = Tk()
-
-                root.geometry("600x120")
-                root.resizable(False, False)
-                root.title("YouTube_Video_Downloader")
-                root.config(background="#000000")
-
-                video_Link = StringVar()
-                download_Path = StringVar()
-
-                Widgets()
-
-                root.mainloop()
 
             elif 'what is the time' in self.query or "what's the time" in self.query or 'tell me the time' in self.query or 'what is the current time' in self.query:
 
