@@ -80,25 +80,10 @@ class MainThread(QThread):
 
             return self.query.lower()
 
-    def Wish_me(self):
-        if hour1 >= 0 and hour1 <= 12:
-            Speak("Good Morning")
-
-        elif hour1 > 12 and hour1 < 6:
-            Speak("Good afternoon")
-
-        else:
-            Speak("Good evening ")
-        Speak("I am Jarvis")
-        Speak("Your personal AI Assistant")
-        Speak("How may I help you?")
-
     if __name__ == "__main__":
         print("J.A.R.V.I.S Initiated")
         Speak("JARVIS Initiated")
-        # Speak("")
-        mt = MainThread()
-        mt.Wish_me()
+
 
     def TaskExe(self):
         def Music():
@@ -1004,15 +989,17 @@ class MainThread(QThread):
 
                 cv2.destroyAllWindows()
 
-    TaskExe()
+myinstance = MainThread()
+myinstance.TaskExe
+    
 
 
 startExecution = MainThread()
 
 
 class Main(QMainWindow):
-    def __init__(self):
-        super().__init_()
+    def _init_(self):
+        super()._init_()
         self.ui = Ui_JarvisGUI()
         self.ui.setupUi(self)
         self.ui.pushButton.clicked.connect(self.startTask)
