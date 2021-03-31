@@ -157,47 +157,47 @@ class MainThread(QThread):
             Speak("Tell me the name of the person to send the WhatsApp message to")
             name = takecommand()
 
-            if 'dad' in name:
+            if '' in name:
                 Speak("Tell me what is the message?")
                 msg = takecommand()
                 Speak("Tell time in hour")
                 hour = int(takecommand())
                 Speak("Tell time in minutes now")
                 mins = int(takecommand())
-                pywhatkit.sendwhatmsg("+91 9619089263", msg, hour, mins, 8)
+                pywhatkit.sendwhatmsg("", msg, hour, mins, 8)
                 Speak("OK Sir sending.......")
 
-            elif 'mom' in name or 'mum' in name:
+            elif '' in name or '' in name:
                 Speak("Tell me what is the message?")
                 msg = takecommand()
                 Speak("Tell time in hour")
                 hour = int(takecommand())
                 Speak("Tell time in minutes now")
                 mins = int(takecommand())
-                pywhatkit.sendwhatmsg("+91 9619089262", msg, hour, mins, 8)
+                pywhatkit.sendwhatmsg("", msg, hour, mins, 8)
                 Speak("OK Sir sending.......")
 
-            elif 'jason' in name:
+            elif '' in name:
                 Speak("Tell me what is the message?")
                 msg = takecommand()
                 Speak("Tell time in hour")
                 hour = int(takecommand())
                 Speak("Tell time in minutes now")
                 mins = int(takecommand())
-                pywhatkit.sendwhatmsg("+91 9082607664", msg, hour, mins, 8)
+                pywhatkit.sendwhatmsg("", msg, hour, mins, 8)
                 Speak("OK Sir sending.......")
 
-            elif 'tanishka' in name or 'germany' in name:
+            elif '' in name or '' in name:
                 Speak("Tell me what is the message?")
                 msg = takecommand()
                 Speak("Tell time in hour")
                 hour = int(takecommand())
                 Speak("Tell time in minutes now")
                 mins = int(takecommand())
-                pywhatkit.sendwhatmsg("+91 8369665548", msg, hour, mins, 8)
+                pywhatkit.sendwhatmsg("", msg, hour, mins, 8)
                 Speak("OK Sir sending.......")
 
-            elif 'sammriddhi' in name or 'sosa' in name or 'sam' in name or 'sammy' in name or 'sammwiddhi' in name:
+            elif '' in name or '' in name or '' in name or '' in name or '' in name:
                 Speak("Tell me what is the message?")
                 msg = takecommand()
                 Speak("Tell time in hour")
@@ -207,17 +207,17 @@ class MainThread(QThread):
                 # mins=mins.replace(" ", "")
                 # mins=mins.replace("-", "")
                 # mins=mins.replace("_", "")
-                pywhatkit.sendwhatmsg("+91 9820719881", msg, hour, mins, 8)
+                pywhatkit.sendwhatmsg("", msg, hour, mins, 8)
                 Speak("OK Sir sending.......")
 
-            elif 'mama' in name:
+            elif 'x' in name:
                 Speak("Tell me what is the message?")
                 msg = takecommand()
                 Speak("Tell time in hour")
                 hour = int(takecommand())
                 Speak("Tell time in minutes now")
                 mins = int(takecommand())
-                pywhatkit.sendwhatmsg("+1 (302) 559-1367", msg, hour, mins, 8)
+                pywhatkit.sendwhatmsg("", msg, hour, mins, 8)
                 Speak("OK Sir sending.......")
 
             else:
@@ -838,8 +838,7 @@ class MainThread(QThread):
 
             elif 'my location' in self.query:
                 Speak("Ok, here is your location......")
-                webbrowser.open(
-                    "https://www.google.co.in/maps/place/Megh+Tower,+Yashodham,+Goregaon,+Mumbai,+Maharashtra+400063/@19.1737215,72.8619565,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7b7a7c4a458d7:0xc036afcdd539602d!8m2!3d19.1737215!4d72.8641452!16s%2Fg%2F12hks6k21?hl=en")
+                webbrowser.open("")
 
             elif 'dictionary' in self.query:
                 Dict()
